@@ -7,10 +7,14 @@
 
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
-    alias(libs.plugins.kotlin.jvm)
+    id("org.springframework.boot") version "3.3.1"
+    id("io.spring.dependency-management") version "1.1.4"
+    kotlin("jvm") version "1.9.22"
+    kotlin("plugin.spring") version "1.9.22"
+
 
     // Apply the application plugin to add support for building a CLI application in Java.
-    application
+   // application
 }
 
 repositories {
@@ -19,7 +23,7 @@ repositories {
 }
 
 dependencies {
-  //  implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-web")
     // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)
 
@@ -36,10 +40,10 @@ java {
     }
 }
 
-application {
-    // Define the main class for the application.
-    mainClass = "org.example.AppKt"
-}
+//application {
+//    // Define the main class for the application.
+//    mainClass = "org.example.AppKt"
+//}
 
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
