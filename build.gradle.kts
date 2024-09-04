@@ -11,10 +11,6 @@ plugins {
     id("io.spring.dependency-management") version "1.1.4"
     kotlin("jvm") version "1.9.22"
     kotlin("plugin.spring") version "1.9.22"
-
-
-    // Apply the application plugin to add support for building a CLI application in Java.
-   // application
 }
 
 repositories {
@@ -40,10 +36,6 @@ java {
     }
 }
 
-//application {
-//    // Define the main class for the application.
-//    mainClass = "org.example.AppKt"
-//}
 
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
